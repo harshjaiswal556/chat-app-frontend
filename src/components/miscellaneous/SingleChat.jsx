@@ -10,9 +10,9 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { getSender, getSenderFull } from "../../config/ChatLogic";
+import { getSender } from "../../config/ChatLogic";
 import ProfileModel from "./ProfileModel";
-import ModalTest from "./ModalTest";
+// import ModalTest from "./ModalTest";
 import UpdateGroupChatModal from "./UpdateGroupChatModal";
 import axios from "axios";
 import "./styles.css";

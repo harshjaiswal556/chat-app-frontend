@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const [name, setName] = useState();
@@ -20,7 +20,7 @@ const Signup = () => {
   const [pic, setPic] = useState();
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
   const Toast = useToast();
   function handleClick() {
     if (show) {
