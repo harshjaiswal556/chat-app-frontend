@@ -51,7 +51,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessage }) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/groupremove`,
+        `https://chat-app-backend-jpf0.onrender.com/api/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -76,7 +76,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessage }) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/rename`,
+        `https://chat-app-backend-jpf0.onrender.com/api/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -113,7 +113,10 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessage }) => {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(
+        `https://chat-app-backend-jpf0.onrender.com/api/user?search=${search}`,
+        config
+      );
       setLoading(false);
       console.log(data);
       setSearchResult(data);
@@ -158,7 +161,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessage }) => {
           },
         };
         const { data } = await axios.put(
-          `/api/chat/groupadd`,
+          `https://chat-app-backend-jpf0.onrender.com/api/chat/groupadd`,
           {
             chatId: selectedChat._id,
             userId: user1._id,

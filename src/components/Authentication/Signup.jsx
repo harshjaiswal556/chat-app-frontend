@@ -113,7 +113,7 @@ const Signup = () => {
       };
       console.log("try");
       const { data } = await axios.post(
-        "/api/user",
+        "https://chat-app-backend-jpf0.onrender.com/api/user",
         { name, email, password, pic },
         config
       );

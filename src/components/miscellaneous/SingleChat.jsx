@@ -60,7 +60,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       };
       setLoading(true);
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://chat-app-backend-jpf0.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       console.log(message);
@@ -120,7 +120,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "/api/message",
+          "https://chat-app-backend-jpf0.onrender.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat,
