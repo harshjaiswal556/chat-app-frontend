@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChatState } from "../../context/ChatProvider";
 import {
   Box,
+  Button,
   FormControl,
   IconButton,
   Input,
@@ -140,6 +141,14 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           position: "bottom",
         });
       }
+    } else if (e.key === "Enter" && newMessage === "") {
+      Toast({
+        title: "Cannot send blank message",
+        status: "info",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
     }
   };
 
@@ -203,11 +212,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             )}
           </Text>
           <Box
+            className="chat-box"
             display={"flex"}
             flexDirection="column"
             justifyContent={"flex-end"}
             p={3}
-            bg="#E8E8E8"
+            bg="#e3f2fd"
             w="100%"
             h="100%"
             borderRadius={"lg"}
@@ -222,11 +232,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 margin="auto"
               />
             ) : (
-              <div className="messages">
+              <div className="messages" style={{ height: "96%" }}>
                 <ScrollableChat message={message} />
               </div>
             )}
-            <FormControl onKeyDown={sendMessage} isRequired mt={3}>
+            <FormControl onKeyDown={sendMessage} isRequired>
               {isTyping ? (
                 <div>
                   <Lottie
@@ -237,13 +247,19 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               ) : (
                 <></>
               )}
-              <Input
-                variant="filled"
-                bg="#E0E0E0"
-                placeholder="Enter message here..."
-                onChange={typingHandler}
-                value={newMessage}
-              ></Input>
+              <Box display={"flex"} flexDirection={"row"}>
+                <Input
+                  variant="filled"
+                  bg="#E0E0E0"
+                  placeholder="Enter message here..."
+                  onChange={typingHandler}
+                  value={newMessage}
+                  mr={1}
+                ></Input>
+                <Button colorScheme={"messenger"} ml={1} onClick={sendMessage}>
+                  Send
+                </Button>
+              </Box>
             </FormControl>
           </Box>
         </>

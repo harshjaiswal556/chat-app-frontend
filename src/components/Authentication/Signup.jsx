@@ -119,6 +119,7 @@ const Signup = () => {
       );
       Toast({
         title: "Registration successfull",
+        description: "Now please Login",
         status: "success",
         duration: 5000,
         isClosable: true,

@@ -140,8 +140,8 @@ const SideDrawer = () => {
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize={"2xl"} fontFamily={"Work sans"}>
-          CHAT-WEB-APP
+        <Text fontSize={"2xl"} fontFamily={"Work sans"} fontWeight={"900"}>
+          HARSH-CHAT-APP
         </Text>
         <div>
           <Menu>

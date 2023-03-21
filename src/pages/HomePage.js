@@ -36,7 +36,7 @@ const HomePage = () => {
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work Sans" fontWeight="900">
-          Chat-Web-App
+          Harsh-Chat-App
         </Text>
       </Box>
       <Box
